@@ -1,0 +1,58 @@
+{
+  "dictionary": [
+    {
+      "article": "Der",
+      "german": "Stern",
+      "english": "Star",
+      "id": 3
+    },
+    {
+      "article": "-",
+      "german": "glücklich",
+      "english": "happy",
+      "id": 4
+    },
+    {
+      "article": "-",
+      "german": "traurig",
+      "english": "sad",
+      "id": 5
+    },
+    {
+      "article": "-",
+      "german": "wütend",
+      "english": "mad",
+      "id": 6
+    },
+    {
+      "article": "-",
+      "german": "aufgeregt",
+      "english": "excited",
+      "id": 7
+    },
+    {
+      "article": "-",
+      "german": "auf Wiedersehen",
+      "english": "goodbuy",
+      "id": 8
+    },
+    {
+      "article": "-",
+      "german": "verwirrt",
+      "english": "confused",
+      "id": 9
+    },
+    {
+      "article": "-",
+      "german": "wie geht's?",
+      "english": "how are you?",
+      "id": 10
+    },
+    {
+      "article": "-",
+      "german": "danke",
+      "english": "thanks",
+      "id": 11
+    }
+  ]
+}

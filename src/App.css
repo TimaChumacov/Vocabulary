@@ -2,20 +2,10 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.Deutch, .CodeNotes, .Cards {
   background-color: #282c34;
   min-height: 100vh;
+  padding: 100px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +14,168 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  position: fixed;
+  background-color: #14161b;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  color: #5688C7;
+}
+
+.Link {
+  color: white;
+  text-decoration: none;
+}
+
+.navItem {
+  width: 50%;
+  height: 100%;
+}
+table {
+  width: 80%;
+}
+
+
+td {
+  padding: 10px;
+  border: 1px solid #14161b;
+}
+
+tr:nth-child(2n) {
+  background: #343a44;
+}
+
+.inputTd {
+  padding: 0;
+  width: 45%;
+}
+
+td input {
+  color: white;
+  font-size: calc(10px + 2vmin);
+  display: block;
+  height: 35px;
+  width: 90%;
+  background: transparent;
+  border: none;
+  padding-left: 20px;
+  float: left;
+  box-sizing: border-box;
+}
+
+.symBar{
+  box-sizing: border-box;
+  width: 10%;
+  height: 35px;
+  float: left;
+}
+
+.symBar div{
+  font-size: 15px;
+  text-align: center;
+  border: 1px solid #282c34;
+  width: 50%;
+  height: 50%;
+  float: left;
+  box-sizing: border-box;
+}
+
+td input:focus {
+  outline: none;
+}
+
+#submitBtn:hover {
+  background: #7FD1B9;
+  border: 1px solid #14161b;
+  color: #14161b;
+  text-align: center;
+}
+
+#submitBtn {
+  background: #14161b;
+  border: 1px solid #7FD1B9;
+  color: #7FD1B9;
+  text-align: center;
+}
+
+.dropdown {
+  padding: 0;
+  text-align: center;
+  width: 10%;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  background-color: #14161b;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.menu div:hover {
+  border-bottom: 1px solid white;
+}
+
+.dropdown:hover .menu {
+  display: block;
+}
+
+thead {
+  background-color: #14161b;
+  color: #8789C0;
+  font-weight: bold;
+}
+
+tfoot {
+  background-color: #14161b;
+}
+
+tfoot tr td {
+  border: 2px s #8789C0;
+}
+
+.delete {
+  background: center / contain no-repeat url("images/bin.png");
+  filter: invert(50%);
+}
+
+.delete:hover {
+  filter: invert(0%);
+  background-color: #F4D35E;
+}
+
+.searchBar {
+  width: 70%;
+  height: 50px;
+  margin-bottom: 5%;
+  padding: 0;
+}
+
+.searchBar input {
+  float: left;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: x-large;
+  text-align: center;
+  border: none;
+  border-radius: 30px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.searchBar input:focus {
+  outline: none;
+  border: 5px solid #8789C0;
 }
