@@ -1,26 +1,27 @@
 import React from 'react';
 import './App.css';
 
+//vocabulary componenet
 export default class Deutch extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-        dictionary: [],
-        newArticle: "-",
-        newGerman: "-",
-        newEnglish: "-",
-        searchValue: ""
+        dictionary: [], //all the words. it will be filled with data from local server
+        newArticle: "-", // those 3 "new" vars store value for a new word to add
+        newGerman: "",
+        newEnglish: "", 
+        searchValue: "" //stores value typed in searchbar
      };
      this.fillTable = this.fillTable.bind(this)
      this.specSymBtn = this.specSymBtn.bind(this)
   }
 
-  fillTable (searchText)
+  fillTable (searchText) // fills this.state.dictionary
   {
-    const fetchDict = async () => 
+    const fetchDict = async () => //async function coz fetching data takes some time
     {
-      let res = '';
-      if(searchText)
+      let res = ''; //fetch response
+      if(searchText) //searching is implemented in a fetch link
       {
         res = await fetch('http://localhost:8000/dictionary?q=' + searchText)
       } else
@@ -31,12 +32,12 @@ export default class Deutch extends React.Component {
       return dict
     }
 
-    fetchDict()
+    fetchDict() //fetchDict is still an async promise so i have to either resolve it or catch an error
       .then(dict => this.setState({dictionary: dict}))
       .catch(err => console.log(err.message))
   }
 
-  componentDidMount()
+  componentDidMount() //fill table as soon as all the other DOM is loaded in
   {
     this.fillTable()
   }
@@ -50,7 +51,6 @@ export default class Deutch extends React.Component {
       german: this.state.newGerman,
       english: this.state.newEnglish
     }
-
     await fetch('http://localhost:8000/dictionary',
       {
         method: 'POST',
@@ -58,18 +58,21 @@ export default class Deutch extends React.Component {
         headers: {'Content-Type': 'application/json'}
       }
     )
+    this.setState({newArticle: ""})
+    this.setState({newGerman: ""})
+    this.setState({newEnglish: ""})
 
-    this.fillTable()
+    this.fillTable() // I call fillTable to refresh data
   }
 
-  handleDelete = async (id) =>
+  handleDelete = async (id) => //pass id as argument when calling, then use fetch delete method to delete object that link leads to, then refresh using fillTable
   {
       const res = await fetch('http://localhost:8000/dictionary/' + id,{method: 'DELETE'})
 
       this.fillTable()
   }
 
-  specSymBtn ()
+  specSymBtn () //I didnt like german keybord layout so i made little buttons that add symbols to your clipboard
   {
     return (
       <div className = "symBar">
@@ -85,7 +88,7 @@ export default class Deutch extends React.Component {
   render() 
   {
     console.log("render")
-    const jsonDictionary = this.state.dictionary.map((word) => 
+    const jsonDictionary = this.state.dictionary.map((word) => //I map this.state.dictionary and store it to this const 
           <tr className = "word" key = {word.id}>
             <td className = "delete" onClick = {() => this.handleDelete(word.id)}></td>
             <td className = "dropdown">{word.article}</td>
@@ -123,10 +126,10 @@ export default class Deutch extends React.Component {
                 </div>
               </td>
               <td className = "inputTd">
-                <input type="text" placeholder = "In german" onChange = {(e) => this.setState({newGerman: e.target.value})}/>
+                <input type="text" placeholder = "In german" value = {this.state.newGerman} onChange = {(e) => this.setState({newGerman: e.target.value})}/>
                 {this.specSymBtn()}
               </td>
-              <td className = "inputTd"><input type="text" placeholder = "In english" onChange = {(e) => this.setState({newEnglish: e.target.value})}/></td>
+              <td className = "inputTd"><input type="text" placeholder = "In english" value = {this.state.newEnglish} onChange = {(e) => this.setState({newEnglish: e.target.value})}/></td>
             </tr>
           </tfoot>
         </table>

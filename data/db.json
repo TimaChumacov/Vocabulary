@@ -43,16 +43,16 @@
       "id": 9
     },
     {
-      "article": "-",
-      "german": "wie geht's?",
-      "english": "how are you?",
-      "id": 10
+      "article": "Die",
+      "german": "Katze",
+      "english": "cat",
+      "id": 12
     },
     {
-      "article": "-",
-      "german": "danke",
-      "english": "thanks",
-      "id": 11
+      "article": "Das",
+      "german": "Sofa",
+      "english": "sofa",
+      "id": 13
     }
   ]
 }

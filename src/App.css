@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.Deutch, .CodeNotes, .Cards {
+.Deutch, .Home {
   background-color: #282c34;
   min-height: 100vh;
   padding: 100px 0;
@@ -12,6 +12,12 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.Home {
+  padding: 0;
+  text-align: center;
+  font-size: calc(15px + 3vmin);
 }
 
 .App {

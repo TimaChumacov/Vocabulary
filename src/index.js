@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Deutch from './Deutch';
-import Cards from './Cards';
-import CodeNotes from './CodeNotes';
+import Home from './Home';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -14,8 +13,7 @@ ReactDOM.render(
       <App />
       <Switch>
         <Route path = '/deutch' component = {Deutch}/>
-        <Route path = '/cards' component = {Cards}/>
-        <Route path = '/codenotes' component = {CodeNotes}/>
+        <Route path = '' component = {Home}/>
       </Switch>
     </Router>
   </React.StrictMode>,
